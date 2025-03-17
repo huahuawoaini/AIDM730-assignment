@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊猫花花展示页</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            margin: 0;
+            background: 
+            linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), /* 半透明白色叠加层 */
+            url('images/bamboo-pattern.png') /* 竹子纹理图 */,
+             #5d9b7b; /* 基础翠绿色 */
+            background-size: 200px auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        /* 主标题 */
+        .main-title {
+            font-size: 36px;
+            color: #2c5f2d;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 内容容器 */
+        .main-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        /* 图片和信息的横向布局 */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* 左侧大图片样式 */
+        .main-image {
+            width: 450px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* 右侧信息区域 */
+        .info-section h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            border-left: 4px solid #2c5f2d;
+            padding-left: 15px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">🐼 熊猫花花展示板</h1>
+    
+    <div class="main-container">
+        <div class="content-wrapper">
+            <img src="images/image1.jpg" alt="熊猫花花" class="main-image">
+            
+            <div class="info-section">
+                <h1>一. 基本信息</h1>
+                <p>名字: 成和花</p>
+                <p>性别: 女</p>
+                <p>出生日期: 2020年7月4日</p>
+                <p id="age">年龄: 计算中...</p>
+                <p>职位: 成都文旅荣誉局长</p>
+                <p>住址: 成都大熊猫繁育研究基地</p>
+            </div>
+        </div>
+    </div>
+
+<!-- 在第一个.main-container之后添加以下代码 -->
+<div class="main-container">
+    <div class="content-wrapper">
+        <div class="relationship-section">
+            <h1 class="section-title">🐾 二. 熊猫关系</h1>
+            
+            <!-- 父母辈 -->
+            <div class="family-group">
+                <h2 class="generation-title">父母辈</h2>
+                <div class="family-row">
+                    <!-- 父亲 -->
+                    <div class="family-card">
+                        <img src="images/image2.jpg" alt="美兰">
+                        <div class="panda-info">
+                            <h3>美兰</h3>
+                            <p class="relationship">（花花的父亲）</p>
+                        </div>
+                    </div>
+
+                    <!-- 母亲 -->
+                    <div class="family-card">
+                        <img src="images/image3.jpg" alt="成功">
+                        <div class="panda-info">
+                            <h3>成功</h3>
+                            <p class="relationship">（花花的母亲）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 同辈 -->
+            <div class="family-group">
+                <h2 class="generation-title">兄弟姐妹</h2>
+                <div class="family-row">
+                    <!-- 妹妹 -->
+                    <div class="family-card">
+                        <img src="images/image4.jpg" alt="成和叶">
+                        <div class="panda-info">
+                            <h3>成和叶</h3>
+                            <p class="relationship">（双胞胎妹妹）</p>
+                        </div>
+                    </div>
+
+                    <!-- 哥哥 -->
+                    <div class="family-card">
+                        <img src="images/image5.jpg" alt="萌兰">
+                        <div class="panda-info">
+                            <h3>萌兰</h3>
+                            <p class="relationship">（哥哥）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* 新增家族成员样式 */
+.family-group {
+    margin: 40px 0;
+}
+
+.generation-title {
+    color: #2c5f2d;
+    border-left: 4px solid #2c5f2d;
+    padding-left: 15px;
+    margin: 30px 0;
+}
+
+.family-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.family-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.family-card:hover {
+    transform: translateY(-5px);
+}
+
+.family-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+}
+
+.panda-info h3 {
+    color: #2c5f2d;
+    margin: 0 0 5px 0;
+    font-size: 20px;
+}
+
+.relationship {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+</style>
+    <script>
+        // 增强版年龄计算（包含闰年处理）
+        function calculateAge() {
+            const birthDate = new Date(2020, 6, 4);
+            const today = new Date();
+
+            let years = today.getFullYear() - birthDate.getFullYear();
+            let months = today.getMonth() - birthDate.getMonth();
+            let days = today.getDate() - birthDate.getDate();
+
+            if (days < 0) {
+                months--;
+                days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            // 添加中文单位
+            const ageString = [];
+            if (years > 0) ageString.push(`${years}岁`);
+            if (months > 0) ageString.push(`${months}个月`);
+            if (days > 0) ageString.push(`${days}天`);
+
+            document.getElementById('age').innerHTML = 
+                `年龄: ${ageString.join('')}`;
+        }
+
+        window.onload = calculateAge;
+    </script>
+<div class="main-container">
+    <div class="content-wrapper">
+        <div class="gallery-section">
+            <h1 class="section-title">🌸 三. 花花的一些图片</h1>
+            
+            <div class="photo-wall">
+            
+                <figure class="photo-item">
+                    <img src="images/image1-1.jpg" alt="大聪明的眼神">
+                    <figcaption>大聪明的眼神</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-2.jpg" alt="妹妹我爱你">
+                    <figcaption>妹妹我爱你</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-3.jpg" alt="惬意">
+                    <figcaption>惬意</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-4.jpg" alt="搓妹妹">
+                    <figcaption>搓妹妹</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-5.jpg" alt="豚鼠">
+                    <figcaption>豚鼠</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-6.jpg" alt="啊？">
+                    <figcaption>啊？</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-7.jpg" alt="萌兽咆哮">
+                    <figcaption>萌兽咆哮</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-8.jpg" alt="敬礼">
+                    <figcaption>敬礼</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-9.jpg" alt="猪突猛进">
+                    <figcaption>猪突猛进</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-10.jpg" alt="高兴到模糊">
+                    <figcaption>高兴到模糊</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-11.jpg" alt="大象">
+                    <figcaption>大象</figcaption>
+                </figure>
+
+                <figure class="photo-item">
+                    <img src="images/image1-12.jpg" alt="猪（不是）">
+                    <figcaption>猪（不是）</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* 新增图片墙样式 */
+.gallery-section {
+    width: 100%;
+}
+
+.photo-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.photo-item {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.photo-item figcaption {
+    padding: 12px;
+    text-align: center;
+    background: #fff;
+    font-size: 15px;
+    color: #666;
+    border-radius: 0 0 8px 8px;
+}
+</style>    
+</body>
+</html>
