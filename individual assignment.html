@@ -9,11 +9,7 @@
         body {
             font-family: "Microsoft YaHei", Arial, sans-serif;
             margin: 0;
-            background: 
-            linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), /* 半透明白色叠加层 */
-            url('images/bamboo-pattern.png') /* 竹子纹理图 */,
-             #5d9b7b; /* 基础翠绿色 */
-            background-size: 200px auto;
+            background-color: #f0f0f0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -87,6 +83,7 @@
                 <p id="age">年龄: 计算中...</p>
                 <p>职位: 成都文旅荣誉局长</p>
                 <p>住址: 成都大熊猫繁育研究基地</p>
+                <p>昵称：花局长、</p>
             </div>
         </div>
     </div>
@@ -350,5 +347,208 @@
     border-radius: 0 0 8px 8px;
 }
 </style>    
+<!-- 第四部分：视频展示 -->
+<div class="main-container">
+    <div class="content-wrapper">
+        <div class="video-section">
+            <h1 class="section-title">🎥 四. 熊猫视频集</h1>
+            
+            <div class="video-container">
+                <!-- 视频播放器 -->
+                <div class="video-player">
+                    <iframe 
+                        id="main-video"
+                        src="//player.bilibili.com/player.html?bvid=BV11v4y1V7Mb&page=1"
+                        scrolling="no"
+                        frameborder="no" 
+                        allowfullscreen="true"
+                        allow="autoplay; encrypted-media; fullscreen">
+                    </iframe>
+                </div>
+
+                <!-- 视频列表 -->
+                <div class="video-list">
+                    <div class="video-item active" data-bvid="BV11v4y1V7Mb">
+                        <span class="video-index">01</span>
+                        <span class="video-title">哈哈哈！太逗了，花花少吃了两口果果，急的要说话了！</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1ZS4FeXEJq">
+                        <span class="video-index">02</span>
+                        <span class="video-title">花花躺着贴贴妹妹！游客以为是一只熊猫！哈哈哈怎么那么可爱啊！花宝的小tietie，圆pp太可爱啊</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1SSq2Y1Et5">
+                        <span class="video-index">03</span>
+                        <span class="video-title">爷爷一声过来，直接脸朝下摔成脏脏猫🤣🤣🤣</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1NN4y147Sv">
+                        <span class="video-index">04</span>
+                        <span class="video-title">12.21 花花伸手拍了拍肚皮，示意谭爷爷喂果果，反正全程没看到花花用手拿果果，这个小熊精太会拿捏了</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1TfyDYrEwj">
+                        <span class="video-index">05</span>
+                        <span class="video-title">哈哈！游客看花花一直拍屁股，把保安急坏了！</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1yhzdYqEFK">
+                        <span class="video-index">06</span>
+                        <span class="video-title">24.12.01 坐到面前的宝宝花，这波叔叔姨姨赢麻了。</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV11m4y11759">
+                        <span class="video-index">07</span>
+                        <span class="video-title">花花注意！迪迪来咯！迪迪非要和花花挤在一起！</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV11FStYnEcx">
+                        <span class="video-index">08</span>
+                        <span class="video-title">24.10.29 保安大叔：这是两只猫不是一只！</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1Y9UPYAEQs">
+                        <span class="video-index">09</span>
+                        <span class="video-title">11.13 花局好像在安排工作，我大气都不敢出～</span>
+                    </div>
+                    <div class="video-item" data-bvid="BV1FcQoYcEft">
+                        <span class="video-index">10</span>
+                        <span class="video-title">叶子妹妹在木架上睡觉了，花花上来趴在了妹妹身上顾涌，两个小熊友一起叠猫猫，叶子好宠姐姐呀，任花花趴在背上都没有动。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* 视频展示区样式 */
+.video-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.video-player {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9比例 */
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    background: #000;
+}
+
+.video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-list {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.video-item:hover {
+    background: #fff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.video-item.active {
+    border-color: #5d9b7b;
+    background: #fff;
+    font-weight: 500;
+}
+
+.video-index {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #5d9b7b;
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.video-title {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.4;
+    flex: 1;
+}
+
+/* 滚动条样式 */
+.video-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.video-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.video-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-list {
+        max-height: 400px;
+    }
+    
+    .video-item {
+        padding: 12px;
+    }
+}
+</style>
+
+<script>
+// 视频切换功能
+document.querySelectorAll('.video-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // 移除所有激活状态
+        document.querySelectorAll('.video-item').forEach(i => i.classList.remove('active'));
+        
+        // 设置当前激活状态
+        this.classList.add('active');
+        
+        // 获取视频ID
+        const bvid = this.dataset.bvid;
+        const iframe = document.getElementById('main-video');
+        
+        // 更新播放器（添加随机参数避免缓存）
+        iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&autoplay=1&page=1&t=0&r=${Math.random()}`;
+        
+        // 处理移动端全屏问题
+        if(window.innerWidth <= 768) {
+            iframe.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// 初始化第一个视频
+const firstVideo = document.querySelector('.video-item');
+firstVideo.classList.add('active');
+</script>
 </body>
 </html>
